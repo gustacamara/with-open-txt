@@ -1,0 +1,10 @@
+3
+U
+a, n, j, C
+1, 2123, 20913
+C
+abacate, banana, maca
+leite, iogurte, whey
+I
+mouse, !, B, 5, 9
+mustache, terere, 8, &, 10101000, B, 9

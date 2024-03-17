@@ -1,0 +1,16 @@
+5
+U
+1, 2, 3, 4
+5, 6, 1, 2, 3, 4, 11
+C
+batata, frango, musculo
+U, C, $, 7
+I
+U, I, J, P, -
+U, J, h, u, a, -, {
+D
+1, r, b, j, a, []
+a, r, 1, j, p
+U
+j, n, *, 0, ^
+j, n, a, a, 7, 9, 0

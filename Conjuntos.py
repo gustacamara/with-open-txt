@@ -6,16 +6,18 @@ def parte_logica(operacao, primeiro, segundo):
             match operacao:
                 # faz a operação de produto cartesiano!
                 case "C":
-                    resultado = [(x,y)for x in primeiro for y in segundo]
+                    resultado = str([(x,y)for x in primeiro for y in segundo])
                     print('Produto Cartesiano: conjunto 1 {',", ".join(primeiro).replace("'", ""),
                     '}, conjunto 2 {',", ".join(segundo).replace("'", ""),'}. Resultado: {',
-                    resultado,'}')
+                    resultado.replace("'", "").replace("[","").replace("]",""),'}')
                 # faz a operação de União!
                 case "U":
                     resultado = list(set(primeiro) | set(segundo))
                     print('União: conjunto 1 {',", ".join(primeiro).replace("'", ""),
                     '}, conjunto 2 {',", ".join(segundo).replace("'", ""),'}. Resultado: {',
                     ", ".join(resultado).replace("'", ""),'}')
+                    # .join adiciona o espaço entre os elementos e o replace() tira os elementos antes da virgula e\
+                    #  \n substitui pelo dps da virgula
 
                 # faz a operação de diferença!
                 case "D":
@@ -36,8 +38,9 @@ def parte_logica(operacao, primeiro, segundo):
        Error
 # --------------------PARTE FUNCIONAL --------------------------
 #verifica se o arquivo existe
-arquivo = input("Insira o nome do arquivo que deseja colocar: ")
-arquivo+= ".txt"
+arquivo = input("Insira o nome do arquivo que deseja colocar, mas não coloque o complemento '.txt'!\
+                \nAssim como o exemplo (conjunto) : ")
+arquivo += ".txt"
 try:
     # primeira linha do arquivo
     with open(arquivo, "r")as primeLinha:
@@ -53,4 +56,3 @@ try:
             parte_logica(operacao, dominio.split(', '), contraDominio.split(', ')) #separa os itens pelo (virgula e espaço): ', '
 except FileNotFoundError:
     print(FileNotFoundError, "O nome do arquivo inserido não foi encontrado!")
-
